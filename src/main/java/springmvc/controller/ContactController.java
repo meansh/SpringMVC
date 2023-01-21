@@ -13,9 +13,16 @@ import springmvc.model.User;
 
 @Controller
 public class ContactController {
+	
+	@ModelAttribute
+	public void commonDataForModel(Model m) {
+		m.addAttribute("Header", "Sample form filling");
+		m.addAttribute("Desc", "Form filling with Spring MVC");
+	}
 
 	@RequestMapping("/contact")
-	public String showForm() {
+	public String showForm(Model m) {
+		
 		return "contact";
 	}
 
