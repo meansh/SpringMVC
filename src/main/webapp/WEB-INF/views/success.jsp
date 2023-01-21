@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Welcome, ${userName }</h1>
-	<h1>Your email address is ${email }</h1>
-	<h1>Your password address is ${password }</h1>
+	<h1>Welcome, ${user.userName }</h1>
+	<h1>Your email address is ${user.email }</h1>
+	<h1>Your password address is ${user.password }</h1>
 	
 </body>
 </html>
