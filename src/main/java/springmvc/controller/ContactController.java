@@ -1,18 +1,19 @@
 package springmvc.controller;
 
-import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import springmvc.model.User;
 
 @Controller
 public class ContactController {
+	
+	@Autowired
+	private springmvc.service.UserService userService;
 	
 	@ModelAttribute
 	public void commonDataForModel(Model m) {
@@ -30,6 +31,7 @@ public class ContactController {
 	public String handleForm(@ModelAttribute User user, Model model) {
 
 		System.out.println(user);
+		this.userService.createUser(user);
 
 		return "success";
 
