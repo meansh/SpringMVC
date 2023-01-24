@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 	
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String home(Model model) {
 		System.out.print("This is home url");
 		model.addAttribute("name", "Utkarsh Srivastava");
